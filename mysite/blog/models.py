@@ -14,7 +14,7 @@ class Post(models.Model):
         related_name="blog_posts"
     )
     body = models.TextField()
-    publish = models.DateTimeField(defnull=timezone.now)
+    publish = models.DateTimeField(default=timezone.now)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     status = models.CharField(
