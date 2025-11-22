@@ -7,6 +7,7 @@ class PublishedManager(models.Manager):
         return (
             super().get_queryset().filter(status=Post.Status.PUBLISHED)
         )
+    
 
 class Post(models.Model):
     class Status(models.TextChoices):
@@ -37,5 +38,5 @@ class Post(models.Model):
             models.Index(fields=['-publish']),
         ]
 
-        def __str__( self):
-            return self.title
+    def __str__( self):
+        return self.title
